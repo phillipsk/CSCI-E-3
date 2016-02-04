@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CSCI E-3 Unit #1 Project</title>
+    <link rel="stylesheet" href="css/cscie3.css">
+    <!-- Latest compiled and minified CSS -->
+  </head>
+  <body class="hw">
+
+    <!--
+     Here you'll add your own DIV tag with your name inside it, and with the id and class
+     attributes set as described in section 5 of this page.
+     -->
+
+    <div class="container">
+      <h1>CSCI E-3 Unit #1 Project</h1>
+      <h3 class="whatlearn">What you're learning:</h3>
+      <p>This project is designed to help you get your development
+        environment for HTML/CSS/Javascript set up, and to demonstrate that
+        you've got the basic set up for modifying and writing code, debugging,
+        and submitting your assignments. By the end of this project, you'll
+        have installed some tools, debugged and fixed some code, and packaged it
+        for handing in. Note: The tasks 1–5 below are completed in the PartA folder; task 6 is completed in the PartB folder. </p>
+      <h3>What you need to do:</h3>
+      <ol>
+        <li>Examine this package</li>
+        <li>Get a code editor</li>
+        <li>Get Firefox &amp; Firebug</li>
+        <li>Find and fix the bugs</li>
+        <li>Prepare your homework package to submit</li>
+        <li>Convert a JSFiddle example into local code</li>
+      </ol>
+      <h4>1. Examine this package</h4>
+      <p>Unzip this package into a folder. Look at its structure&mdash;all of the
+        homework projects will be distributed in this way, and it's typical of
+        how the various resources used by a web page are organized.&nbsp; You'll submit your assignments in a zip file
+        with this exact file/folder structure. </p>
+      <h4>2. Get a code editor</h4>
+      <p>Download a code editor of your choice. Notepad and TextEdit aren't code
+        editors. See the Week 1, Lesson 2 in Canvas and Chapter 3 of the textbook for advice. I'm partial to
+        TextWrangler/BBEdit on the Mac, or Komodo Edit on Mac or Windows, but
+        there are many and it's largely a personal preference.&nbsp; An IDE is
+        not necessary, and will just complicate things at this point.</p>
+      <h4>3. Make sure you have Firefox &amp; Firebug and can find and open the Chrome Developer Tools</h4>
+      <p>The recommended browser/debug environment for this course is Firefox
+        with the Firebug extension, along with Google Chrome and its built-in tools.
+        &nbsp; Other browsers have debug tools, too, but
+        there's nothing quite like Firebug.&nbsp; Download the latest Firefox
+        for your computer and install the Firebug extension (select Add-Ons in Firefox and then search for Firebug).
+      Instructions for this can be found in Week 2 of the course.</p>
+      <p>Once you have your debugging tools and an editor, you're ready for the next step. </p>
+      <h4>4. Find and fix a bug</h4>
+      If you're not already viewing this file in Firefox, open it in Firefox and
+      open Firebug. Also, open this folder in your Finder or Windows Explorer,
+      and open the PartA/js/project1.js file in your code editor. <br>
+      <br>
+      In Firebug, look at the different tabs and page elements. You can see
+      everything here: HTML, Javascript, and CSS code. Open the SCRIPT tab and
+      find the javascript file associated with this page. Look at the Network
+      tab and see how every element of this page is listed. <br>
+      <h5><span style="text-decoration: underline;">Bug #1 (50 pts)<br>
+        </span></h5>
+      Click the Click me #1 button on this page. There should have been three alert boxes, one after another,
+      but there's only one! I must have
+      introduced a bug in my code. You're going to fix it.<br>
+      &nbsp;<br>
+      <div id="clickme1" class="hwbutton">Click Me #1</div>
+      <br>
+      <br>
+      Use FireBug's console to see if there's an error message.&nbsp; That
+      should help narrow down the problem to the particular section or line of the
+      code. <br>
+      <br>
+      Look at the code and see if anything looks obviously wrong&mdash;misspellings
+      of reserved words or function names, malformed code. You shouldn't need
+      any special knowledge of Javascript to find this one&mdash;it should be
+      fairly clear.&nbsp; <br>
+      <br>
+      Look at the project1.js in your code editor. Don't worry about the rest of the
+      code&mdash;you're not supposed to understand all that just yet (though you
+      will in a few weeks!) Just look for an obvious error near the line that's
+      failing.<br>
+      <br>
+      Fix it, save it, and reload this page to try again.<br>
+      You might have to Shift-Reload to be sure the JS file refreshes.<br>
+      <br>
+      If it's working, you will see three consecutive alert messages in your
+      browser. If you want to run it again, reload the page. <br>
+      <h5><span style="text-decoration: underline;">Bug #2 (50pts)<br>
+        </span></h5>
+      Now let's try another. Let's add three numbers.<br>
+      Fill in a non-zero integer into each of the three boxes and click the
+      Click Me #2 button. <br>
+      <input id="input1" type="number"><input id="input2" type="number"><input id="input3"
+        type="number"><br>
+      <div>Your total is: <span id="resultArea"></span></div>
+      <div id="clickme2" class="hwbutton">Click Me #2</div>
+      <br>
+      <br>
+      Does the total look right?&nbsp; (Hint: it does not!)&nbsp; Look in the
+      console for an error and you'll notice that nothing is there. This is because the code
+      is typed just fine. There are no errors in the code itself that prevent
+      the browser from executing it. But there's an error in logic&mdash;the code I
+      wrote doesn't do what I wanted it to do (which is to add three
+      integers).&nbsp; Find the problem, fix it, save it, and reload the page to
+      test it.&nbsp; You might have to Shift-Reload to be sure the JS file
+      refreshes.<br>
+      <br>
+      <h4>5. Prepare PartA of your project by adding your name</h4>
+      Make one more HTML change on this part of your project. This will help us to be sure you're
+      comfortable with HTML, as well as identify your work when we're reviewing and
+      grading this assignment.&nbsp; Open PartA/project1.html in your editor and add a DIV
+      section near the top (look for the instructions in the comments) with the
+      id attribute equal to "studentname" (not your name, the actual string
+      "studentname"), the class attribute equal to "namedata" (again, not your
+      name, but the literal text "namedata"), and with your name as the contents
+      (yes, here you put your actual name).&nbsp; Save the file. If you've got
+      it right, the top of your page should have something that looks like this.
+      The styling is being applied by our CSS&mdash;if you've got the DIV tag, ID
+      and CLASS assigned correctly, it will have this color, size and
+      background.<br>
+      <br>
+      <img title="Screenshot of correct HTML implementation " alt="Example of what the new DIV will look like if implemented correctly."
+        src="img/namediv-example.png"><br>
+
+      <h4>6. Convert a JSFiddle example into local code and submit project</h4>
+      In this last problem, you get to show that you understand the way the files
+      in a web application are arranged.  In the previous example, you had to unzip a
+      set of HTML, JS and CSS files. That directory structure is how the problem sets in
+      this course will be arranged. <br><br>
+      Your assignment is to convert an example on JSFiddle into one that runs locally on your computer,
+      according to the directory structure example we've given you.  This is something you'll have to do
+      from time to time. Debugging code inside of JSFiddle can be very difficult, and often you have to
+      copy it down to run locally in order to fix it. Your steps may look something like this:
+      <ol><li><a href="http://jsfiddle.net/cscie3/zznow3ne/" target="_blank" title="Link to JSFiddle assignment">Start with this JSFiddle</a>, which includes
+      HTML, CSS and Javascript.</li><li> Open the PartB folder from the project folder you unzipped. Inside this folder, create folders called js
+      and css.</li>
+        <li>At the root of this folder, make a file called index.html which contains
+      the HTML from the JSFiddle example.
+      </li>
+        <li>Inside the js folder, make a js file that contains the Javascript from the JSFiddle; and inside the css folder
+        make a css file that contains the CSS from the JSFiddle. You may call these files whatever you want, but be sure they
+        end with the .js and .css extensions. </li>
+        <li>Now you'll need to edit your HTML file. Add the SCRIPT tag that loads your .js file, and add the LINK tag that loads your
+        .css file. </li>
+        <li>Test your html file in the browser and make sure it works and looks the same as the output section
+        of the JSFiddle example. </li>
+        <li>
+      Zip up the whole project folder into a new zip file named
+      "lastname_firstname.projectUnit1a.zip" (you should substitute your own first and last names here!) and submit that as the Unit 1 Project on the class
+      site in Canvas.</li>
+      </ol>
+      <br>
+      <br>
+      <br>
+      <br>
+      <p><br>
+      </p>
+    </div>
+    <script type="text/javascript" src="js/project1.js"></script>
+  </body>
+</html>
