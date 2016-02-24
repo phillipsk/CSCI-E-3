@@ -5,7 +5,7 @@
  *
  * Don't worry if you don't understand all the code in these examples. We're exploring a very specific
  * skill in these examples: using Firebug to find and correct errors in your code.
- *
+ *r
  * By the end of the course you'll be writing stuff like this in your sleep, but for now, just focus on
  * the question at hand: why don't these work as intended?
  *
@@ -18,7 +18,7 @@
  		// It should pop up an 'alert' box that says "Hello"!
  		alert("Hi! (This is the first of three messages)");
  		//then it will pop up an alert that says "Welcome to CSCI E-3!"
- 		alrt("Welcome to CSCI E-3! (This is the second of three messages)");
+ 		alert("Welcome to CSCI E-3! (This is the second of three messages)");
  		//then it will pop up one more alert to say "You did it!"
  		alert("You did it! (This is the third of three messages)");
  }
@@ -58,7 +58,7 @@
  	val3 = (parseInt(val3) ? parseInt(val3) : 0);
 
  	// add the three values
- 	var total = val1 + val2;
+ 	var total = val1 + val2 + val3;
 
  	//display the total in the results area
  	document.getElementById("resultArea").innerHTML=total;
