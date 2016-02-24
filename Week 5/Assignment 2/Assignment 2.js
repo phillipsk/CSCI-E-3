@@ -39,6 +39,7 @@ scoresArray5.forEach(function(val, index, theArray){
     theArray[index] = correct;
 });
 
+//console
 
 for (var i = 0; i < scoresArray5.length; i++) {
     console.log(scoresArray5[i]);
