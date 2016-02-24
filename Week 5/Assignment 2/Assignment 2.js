@@ -33,12 +33,16 @@ function calculateSum(arr){
         return "Error, please provide a legal array.";
     }
 }
-
-/*scoresArray5.forEach(function(val, index, theArray){
+var correct = 0;
+scoresArray5.forEach(function(val, index, theArray){
     var correct = parseInt(scoresArray5.substr(0,1));
     theArray[index] = correct;
 });
-console.log(arr);*/
+
+
+for (var i = 0; i < scoresArray5.length; i++) {
+    console.log(scoresArray5[i]);
+}
 
 document.getElementById("sum4").innerHTML = calculateSum(scoresArray4);
 document.getElementById("sum5").innerHTML = calculateSum(scoresArray5);
