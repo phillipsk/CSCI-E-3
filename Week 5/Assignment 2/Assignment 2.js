@@ -19,35 +19,48 @@ var scoresArray7 = [];
 
 
 function calculateSum(arr){
-    if (arr.constructor === Array){
+    if (arr.constructor === Array && typeof arr !== 'undefined' && arr.length > 0){
         var sum=0;
-        for (var i=0; i<arr.length; i++){
-            sum+=arr[i];
-        }
+        arr.forEach(function(n){
+            var num = parseInt(n);
+            console.log(n);
+            if(!isNaN(num)){
+                sum+=num;
+            }
+            //console.log(parseInt(n),sum);
+        });
         return sum;
-    }
-    else if(arr[0] != null){
-        return "Error, please provide a legal array.";
     }
     else {
         return "Error, please provide a legal array.";
     }
 }
-var correct = 0;
-scoresArray5.forEach(function(val, index, theArray){
-    var correct = parseInt(scoresArray5.substr(0,1));
-    theArray[index] = correct;
+
+//how do I define an empty array, I am trying to test for it.. var scoresArray7 = []; does not seem to be undefined
+/*var sum = 0;
+scoresArray5.forEach(function(n){
+    var num = parseInt(n);
+    if(!isNaN(num)){
+        sum+=num;
+    }
+    console.log(parseInt(n),sum);
+    //theArray[index] = num;
 });
+console.log("sum = ",sum);*/
+
+/*var result = scoresArray5.map(Number).filter(function(n) {
+    return !isNaN(n)
+});*/
 
 //console
-
+/*
 for (var i = 0; i < scoresArray5.length; i++) {
     console.log(scoresArray5[i]);
-}
+}*/
 
 document.getElementById("sum4").innerHTML = calculateSum(scoresArray4);
 document.getElementById("sum5").innerHTML = calculateSum(scoresArray5);
-//document.getElementById("sum6").innerHTML = calculateSum(scoresArray6);
+document.getElementById("sum6").innerHTML = calculateSum(scoresArray6);
 
 // also check for undefined blank input
 document.getElementById("sum7").innerHTML = calculateSum(scoresArray7);
