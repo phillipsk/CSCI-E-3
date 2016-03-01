@@ -1,0 +1,14 @@
+<link rel="stylesheet" type="text/css" href="Assignment1.css">
+<p>This exercise is designed to be sure you're comfortable reading function syntax, and working with functions as arguments.</p>
+<p>In this practice problem, we're testing to see if every element in an array is numeric. <b>This is already a complete solution that works - you don't have to solve that problem!</b></p>
+<p>On line 8 and on ine 11, we're passing a function to the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every" target="_blank">Array.every() method</a> of each of our two test arrays. Array.every() will iterate over the array, calling our function for each element. It will return true if the function returns true for <i>every</i> element in the array.</p>
+<p>If the array contains something which can't be converted to a number, the function will return false, and so Array.every() will return false as well.</p>
+<p><b>Your task</b> is to change this example so that rather than passing the literal function itself as an argument directly in each call to Array.every(), you'll copy the function and assign it to a variable instead (with a name of your choice) and use that variable in the two calls to .every(). If you've done it successfully, the program's output and behavior will be unchanged.</p>
+<p>This will result in your function no longer being duplicated in two places, making the code a little more elegant and easier to maintain.</p>
+<p>This image may help you more easily recognize the nesting of brackets and parens in this code:
+    <a href="http://courses.dce.harvard.edu/~cscie3/examples/week6/week6practice1image.png" target="_blank">Screenshot of function syntax</a></p>
+<p><b>Output:</b>
+</p>
+<div id="output"></div>
+
+<script type="text/javascript" src="Assignment1.js"></script>
