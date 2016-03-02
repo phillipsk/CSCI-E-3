@@ -10,6 +10,7 @@ var scoresArray6 = [88, 73, "bob", 100];
 // hint: while you're converting all array elements to numbers, use a conditional to check to see if it worked before adding the value to the sum
 
 var scoresArray7 = [];
+//empty array added by me
 
 // function calculateSum() is here
 // You will modify this function so that none of the above cases
@@ -17,65 +18,34 @@ var scoresArray7 = [];
 // return the value 'null' or nothing at all, and write an error to the console.
 // Otherwise, if a sum can still be calculated, return that
 
-
+/*
+* This function calculates the sum of all integers within each array passed as a argument. The function first
+* validates whether the array parameter is in fact an array. The function then iterates over each numeric member through
+* a foreach method while simultaneously verifying a number data type before incrementing the sum total. If the argument
+* fails the validity test for the array data type, a respective output message is returned depending according to whether
+* the array is undefined or empty.*/
 function calculateSum(arr){
-    if (arr.constructor === Array && typeof arr !== 'undefined' && arr.length > 0){
+    if (arr.constructor === Array && arr.length > 0){
         var sum=0;
         arr.forEach(function(n){
             var num = parseInt(n);
-            console.log(n);
+            //checking whether each array member is a number prior to summing a total
             if(!isNaN(num)){
                 sum+=num;
             }
-            //console.log(parseInt(n),sum);
         });
         return sum;
+    }
+    else if (arr.length === 0){
+        return "Error, please define an element within the array."
     }
     else {
         return "Error, please provide a legal array.";
     }
 }
 
-//how do I define an empty array, I am trying to test for it.. var scoresArray7 = []; does not seem to be undefined
-/*var sum = 0;
-scoresArray5.forEach(function(n){
-    var num = parseInt(n);
-    if(!isNaN(num)){
-        sum+=num;
-    }
-    console.log(parseInt(n),sum);
-    //theArray[index] = num;
-});
-console.log("sum = ",sum);*/
-
-/*var result = scoresArray5.map(Number).filter(function(n) {
-    return !isNaN(n)
-});*/
-
-//console
-/*
-for (var i = 0; i < scoresArray5.length; i++) {
-    console.log(scoresArray5[i]);
-}*/
-
 document.getElementById("sum4").innerHTML = calculateSum(scoresArray4);
 document.getElementById("sum5").innerHTML = calculateSum(scoresArray5);
 document.getElementById("sum6").innerHTML = calculateSum(scoresArray6);
-
 // also check for undefined blank input
 document.getElementById("sum7").innerHTML = calculateSum(scoresArray7);
-
-
-// Example from Week 5 lecture
-/*
-var myArray = ["LArry", "john", "BILL" ];
-
-myArray.forEach(function(val, index, theArray){
-
-    var lower = val.toLowerCase();
-    var upper = val.toUpperCase();
-    var correct = upper.substr(0, 1) + lower.substr(1);
-    //alert(correct);
-    theArray[index] = correct;
-
-});*/
