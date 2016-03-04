@@ -20,8 +20,13 @@
                 var degreesC = document.getElementById("degC").value; // this is the value from the form field
 
                 // your calculations go here. You'll start with the variable degreesC, convert it to Fahrenheit
+        function convertCtoF_Function(tempC){
+            var x = parseInt(tempC) * (9.0/5) + 32;
+            return x;
+        }
+
                 //  and place the result in the variable 'degreesF'
-                var degreesF = "you haven't written this code yet"; // you will set this to the results of your conversion
+                var degreesF = convertCtoF_Function(degreesC); // you will set this to the results of your conversion
 
                 // now we write the result to the page
                 document.getElementById("degFOut").innerHTML = degreesF;
@@ -32,8 +37,26 @@
                 var degreesF = document.getElementById("degF").value; // this is the value from the form field
 
                 // your calculations go here. You'll start with the variable degreesF, convert it to Celsius
+     function convertFtoC_Function(tempF){
+         var x = (parseInt(tempF) - 32) * (5.0/9);
+         return x;
+     }
                 //  and place the result in the variable 'degreesC'
-                var degreesC = "you haven't written this code yet"; // you will set this to the results of your conversion
+                var degreesC = convertFtoC_Function(degreesF); // you will set this to the results of your conversion
+     /*
+     *
+     *
+     *
+     *
+     *
+     * Add Math rounding method to the above function
+     *
+     *
+     *
+     *
+     *
+     *
+     * */
 
 
                 // now we write the result to the page
