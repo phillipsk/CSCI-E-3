@@ -18,6 +18,7 @@
 splitName.onclick = function(){
 
                var fullname = document.getElementById("fullName").value;
+               //var fullname = "Kevin";
 
                /*
                 *  We've gotten the fullname from the HTML form field.
@@ -34,9 +35,23 @@ splitName.onclick = function(){
                 *  make the first name 'firstname' and assign the rest to 'lastname'
                 *
                 **/
+  var whitespace = fullname.indexOf(" ");
+    var first_whitespace = fullname.substring(0,1);
+    //console.log(first_whitespace);
+    if (whitespace === -1){ //  first_whitespace != " "){
+        var whitespace = fullname.indexOf(" ");
+        var firstname = fullname.substring(0);
+        var lastname = "";
+    }
+    else {
+        var firstname = fullname.substring(0,whitespace);
+        var lastname = fullname.substring(whitespace);
+    }
 
-               var firstname = 'Placeholder first name';
-               var lastname = 'Placeholder last name';
+
+
+               //var firstname = test; //'Kevin';
+               //var lastname = test2; //'Phillips';
 
 
                document.getElementById("firstname").innerHTML = firstname;
