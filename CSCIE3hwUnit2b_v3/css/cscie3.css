@@ -1,0 +1,40 @@
+
+body {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #333;
+}
+.button {
+	border: 1px solid #888888;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	font-style: normal;
+	height: 30px;
+	width: 82px;
+	line-height: 14px;
+	padding: .5em;
+	text-align: center;
+	background-color: #614C26;
+}
+
+.button:hover{
+    border: 2px solid #000;
+}
+label{
+	display: inline-block;
+	width: 5em;
+}
+
+.info div {
+	display: inline-block;
+	width: 10em;
+}
+
+.infoHead {
+	font-weight: bold;
+	border-bottom: 1px solid gray;
+	width: 30em;
+}
