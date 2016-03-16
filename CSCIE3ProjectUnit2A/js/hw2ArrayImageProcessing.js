@@ -50,7 +50,22 @@
  *
  **/
 function makeBlue(original, output){
-      // YOUR CODE GOES HERE
+ // YOUR CODE GOES HERE
+ for (var i = 0; i < original.length; i++){
+    for (var j = 0; j < 3; i++){ // i = 0
+     console.log("original = " + original[i]);
+     console.log("  output = " + output[i]);
+     if (j == 3){
+      output[i] = original[i];
+      console.log("     3rd = " + output[i]);
+     }
+     output[i] = 0;
+     console.log("output = " + output[i]);
+     j++;
+    }
+  //output[i] = original[i];
+ }
+ return output;
 }
 
 /*

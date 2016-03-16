@@ -31,18 +31,16 @@ function myFunction() {
     x.value = x.value.toUpperCase();
 }*/
 var getWordsToCount_HTML_Element = document.getElementById("myWordsToCount");
+var wordcount = document.getElementById("wordcount");
 
-
-getWordsToCount_HTML_Element.onkeyup = function hw2WordCount(){
+getWordsToCount_HTML_Element.onkeyup = function (){
     var str = getWordsToCount_HTML_Element.value;
     var res = str.split(" ");
-    console.log(res.toString());
-    console.log(res.length);
-    //res.splice(0,res.length);
-    console.log(res.length);
-    return res.length;
+
+    wordcount.innerHTML = res.length;
 };
 
+// extra credit attempt
 function myCleanUp (){
     for (var i = 1; i < res.length; i++){
         if (res[i] == res[i-1]){
@@ -50,10 +48,3 @@ function myCleanUp (){
         }
     }
 }
-
-/*
-window.onload = function caller(){
-    document.getElementById("WordCount").innerHTML = hw2WordCount();
-};
-*/
-
