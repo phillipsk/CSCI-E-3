@@ -50,10 +50,11 @@
  *
  **/
 function makeBlue(original, output) {
+      // YOUR CODE GOES HERE
  for (var i = 0; i < original.length; i+=4) {
   output[i] = 0;               // red
   output[i+1] = 0;             // green
-  output[i+2] = original[i+1]; // blue
+  output[i+2] = original[i+2]; // blue
   output[i+3] = original[i+3]; // alpha
  }
 }
@@ -72,6 +73,26 @@ function makeBlue(original, output) {
  **/
 function makeReverse(original, output){
       // YOUR CODE GOES HERE
+ for (var i = 0; i < original.length; i+=4) {
+/*  if (i < 12) {
+   console.log(" ");
+   console.log("r: " + original[i]);     // red
+   console.log("g: " + original[i + 1]); // green
+   console.log("b: " + original[i + 2]); // blue
+   console.log("a: " + original[i + 3]); // alpha
+  }*/
+  output[i] = 255 -original[i];      // red
+  output[i+1] = 255 - original[i+1]; // green
+  output[i+2] = 255 - original[i+2]; // blue
+  output[i+3] = original[i+3];       // alpha
+/*  if (i < 12) {
+   console.log(" ");
+   console.log("r: " + output[i]);     // red
+   console.log("g: " + output[i + 1]); // green
+   console.log("b: " + output[i + 2]); // blue
+   console.log("a: " + output[i + 3]); // alpha
+  }*/
+ }
 }
 
 /*
@@ -88,6 +109,12 @@ function makeReverse(original, output){
 
 function makeTransparent(original,output){
       // YOUR CODE GOES HERE
+ for (var i = 0; i < original.length; i+=4) {
+  output[i] = original[i];         // red
+  output[i+1] = original[i+1];     // green
+  output[i+2] = original[i+2];     // blue
+  output[i+3] = original[i+3] / 2; // alpha
+ }
 }
 
 /*
@@ -108,4 +135,10 @@ function makeTransparent(original,output){
  **/
 function loadComposite(original, secondOne, output){
        // YOUR CODE GOES HERE
+ for (var i = 0; i < original.length; i+=4) {
+  output[i] = original[i] + secondOne[i];       // red
+  output[i+1] = original[i+1] + secondOne[i+1]; // green
+  output[i+2] = original[i+2] + secondOne[i+2]; // blue
+  output[i+3] = original[i+3] + secondOne[i+3]; // alpha
+ }
 }
