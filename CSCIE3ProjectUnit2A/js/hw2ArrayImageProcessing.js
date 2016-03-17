@@ -49,23 +49,13 @@
  *            @output {array} - the bitmap data array to which the output image is written.
  *
  **/
-function makeBlue(original, output){
- // YOUR CODE GOES HERE
- for (var i = 0; i < original.length; i++){
-    for (var j = 0; j < 3; i++){ // i = 0
-     console.log("original = " + original[i]);
-     console.log("  output = " + output[i]);
-     if (j == 3){
-      output[i] = original[i];
-      console.log("     3rd = " + output[i]);
-     }
-     output[i] = 0;
-     console.log("output = " + output[i]);
-     j++;
-    }
-  //output[i] = original[i];
+function makeBlue(original, output) {
+ for (var i = 0; i < original.length; i+=4) {
+  output[i] = 0;               // red
+  output[i+1] = 0;             // green
+  output[i+2] = original[i+1]; // blue
+  output[i+3] = original[i+3]; // alpha
  }
- return output;
 }
 
 /*
