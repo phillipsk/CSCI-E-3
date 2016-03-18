@@ -40,14 +40,25 @@
             this.a = address;
             this.e = email;
             console.log("2 " + name);
+
+            // Functions - Getters
+            this.getName = function(){
+                return this.n;
+            },
+            this.getAddress = function(){
+                return this.a;
+            },
+            this.getEmail = function(){
+                return this.e;
+            }
         }
 
         new AddBookEntry(name,address,email);
         
         // Step #3 - call on writeRowtoPage() to write your new data object to the page
-        writeRowToPage(new AddBookEntry(name,address,email),name);
-        writeRowToPage(AddBookEntry,address);
-        writeRowToPage(AddBookEntry,email);
+        writeRowToPage(this.getName(),name);
+        writeRowToPage(this.getAddress(),address);
+        writeRowToPage(this.getEmail(),email);
 
         // Step#4 - Store your object in localStorage (preserving data
         //          that's already in there from prior submissions!) 
