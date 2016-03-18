@@ -36,15 +36,24 @@ var wordcount = document.getElementById("wordcount");
 getWordsToCount_HTML_Element.onkeyup = function (){
     var str = getWordsToCount_HTML_Element.value;
     var res = str.split(" ");
-
+    console.log(res.toString());
+    myCleanUp(res);
+    console.log(res.toString());
     wordcount.innerHTML = res.length;
+    //wordcount.innerHTML = res.length;
 };
 
 // extra credit attempt
-function myCleanUp (){
-    for (var i = 1; i < res.length; i++){
-        if (res[i] == res[i-1]){
-            res.splice(i,1);
+function myCleanUp (array_param){
+    for (var i = 0; i < array_param.length +4; i++){
+        //console.log(array_param[i]);
+        console.log(array_param.toString());
+        if (array_param[i] == ""){
+            array_param.splice(i,1);
         }
+        console.log(array_param.toString());
+/*        if (res[i] == res[i-1]){
+            res.splice(i,1);
+        }*/
     }
-}
+};
