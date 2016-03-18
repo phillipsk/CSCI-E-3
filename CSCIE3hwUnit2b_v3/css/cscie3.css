@@ -25,16 +25,16 @@ body {
 }
 label{
 	display: inline-block;
-	width: 5em;
+	width: 7em;
 }
 
 .info div {
 	display: inline-block;
-	width: 10em;
+	width: 6em;
 }
 
 .infoHead {
 	font-weight: bold;
 	border-bottom: 1px solid gray;
-	width: 30em;
+	width: 40em;
 }

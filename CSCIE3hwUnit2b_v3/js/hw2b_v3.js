@@ -31,18 +31,29 @@
         var name = document.getElementById("name").value;
         var address = document.getElementById("address").value;
         var email = document.getElementById("email").value;
+        console.log("1 " + name);
 
         // Step #2 - you will create a new data object
-        
+        function AddBookEntry(n,a,e){
+            //var AddressBook_Array = [];
+            this.n = name;
+            this.a = address;
+            this.e = email;
+            console.log("2 " + name);
+        }
+
+        new AddBookEntry(name,address,email);
         
         // Step #3 - call on writeRowtoPage() to write your new data object to the page
-        
+        writeRowToPage(new AddBookEntry(name,address,email),name);
+        writeRowToPage(AddBookEntry,address);
+        writeRowToPage(AddBookEntry,email);
 
         // Step#4 - Store your object in localStorage (preserving data
         //          that's already in there from prior submissions!) 
         
         
-    }
+    };
 
     /* This function accepts two arguments -
      *    @dataObject: your data object representing a single
