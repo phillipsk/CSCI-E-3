@@ -10,9 +10,9 @@
     // Constructor function
     function AddBookEntry(n,a,e){
         //var AddressBook_Array = [];
-        this.n = name;
-        this.a = address;
-        this.e = email;
+        this.n = n;
+        this.a = a;
+        this.e = e;
 
         console.log("2 " + name);
         // Functions - Getters
@@ -55,14 +55,12 @@
         // Step #2 - you will create a new data object
         var myAddressBookEntry = new AddBookEntry(name,address,email);
         //console.log(name);
-        console.log(myAddressBookEntry);
+        //console.log(myAddressBookEntry);
 
         //var myAddrnew AddBookEntry(name,address,email);
 
         // Step #3 - call on writeRowtoPage() to write your new data object to the page
         writeRowToPage(myAddressBookEntry,element);
-        writeRowToPage(myAddressBookEntry,address);
-        writeRowToPage(myAddressBookEntry,email);
 
         // Step#4 - Store your object in localStorage (preserving data
         //          that's already in there from prior submissions!)
