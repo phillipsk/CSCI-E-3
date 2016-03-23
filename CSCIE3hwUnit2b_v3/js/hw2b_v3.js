@@ -14,7 +14,7 @@
         this.a = a;
         this.e = e;
 
-        console.log("2 " + name);
+/*        console.log("2 " + name);
         // Functions - Getters
         this.getName = function(){
             return this.n;
@@ -24,7 +24,7 @@
         },
         this.getEmail = function(){
             return this.e;
-        }
+        }*/
     }
 
     button.onclick = function(){
@@ -55,7 +55,7 @@
         // Step #2 - you will create a new data object
         var myAddressBookEntry = new AddBookEntry(name,address,email);
         //console.log(name);
-        //console.log(myAddressBookEntry);
+        console.log(myAddressBookEntry.n);
 
         //var myAddrnew AddBookEntry(name,address,email);
 
@@ -65,6 +65,23 @@
         // Step#4 - Store your object in localStorage (preserving data
         //          that's already in there from prior submissions!)
 
+        /*// Write the object to localStorage
+         var jsonPerson = JSON.stringify(personInfo);
+         window.localStorage.setItem("person", jsonPerson);*/
+        var temp_array = [];
+        var jsonAddress_Book = JSON.stringify(myAddressBookEntry);
+        for (var property in myAddressBookEntry){
+            temp_array[property] += property;
+            window.localStorage.setItem("first",myAddressBookEntry);
+        }
+        for (var i = 0; i <temp_array.length; i++){
+            console.log(temp_array[i]);
+        }
+
+//window.localStorage.setItem("person", JSON.stringify(configObject));
+        console.log("\nHere's the stringified object returned from localStorage");
+//debugging
+        console.log(window.localStorage.getItem("first"));
 
     };
 
@@ -87,16 +104,16 @@
         var s = "<div class=\"info\">";
 
         s+='<div class="nameDiv">';
-        if (dataObject.name !== 'undefined') {
-            s+=dataObject.name;
+        if (dataObject.n !== 'undefined') {
+            s+=dataObject.n;
         }
         s+= '</div><div class="addrDiv">';
-        if (dataObject.addr !== 'undefined') {
-            s+=dataObject.addr;
+        if (dataObject.a !== 'undefined') {
+            s+=dataObject.a;
         }
         s+= '</div><div class="emailDiv">';
-        if (dataObject.email !== 'undefined') {
-            s+=dataObject.email;
+        if (dataObject.e !== 'undefined') {
+            s+=dataObject.e;
         }
         s+= '</div></div>';
 
