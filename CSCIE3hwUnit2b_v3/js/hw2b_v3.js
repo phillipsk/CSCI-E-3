@@ -68,20 +68,24 @@
         /*// Write the object to localStorage
          var jsonPerson = JSON.stringify(personInfo);
          window.localStorage.setItem("person", jsonPerson);*/
-        var temp_array = [];
+        //var temp_array = [];
         var jsonAddress_Book = JSON.stringify(myAddressBookEntry);
-        for (var property in myAddressBookEntry){
-            temp_array[property] += property;
+        window.localStorage.setItem('my_array',jsonAddress_Book);
+
+
+        /*for (var property in myAddressBookEntry){
+            //temp_array[property] += property;
             window.localStorage.setItem("first",myAddressBookEntry);
-        }
-        for (var i = 0; i <temp_array.length; i++){
+        }*/
+
+        /*        for (var i = 0; i <temp_array.length; i++){
             console.log(temp_array[i]);
-        }
+        }*/
 
 //window.localStorage.setItem("person", JSON.stringify(configObject));
         console.log("\nHere's the stringified object returned from localStorage");
 //debugging
-        console.log(window.localStorage.getItem("first"));
+        console.log(window.localStorage.getItem("my_array"));
 
     };
 
