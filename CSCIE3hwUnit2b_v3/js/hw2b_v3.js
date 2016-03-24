@@ -70,8 +70,8 @@
         console.log("\nHere's the object returned from localStorage and parsed back to an object");
 //debugging
         console.log(s);
-        window.localStorage["my_array"].clear()
 
+        window.localStorage["my_array"].clear();
         for (var i = 0; i < addressBook.length; i++){
             writeRowToPage(addressBook[i],element);
         }
