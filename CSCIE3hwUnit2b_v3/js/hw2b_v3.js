@@ -13,18 +13,20 @@
         this.n = n;
         this.a = a;
         this.e = e;
+        this.my_JSON_array = [];
 
-/*        console.log("2 " + name);
-        // Functions - Getters
-        this.getName = function(){
-            return this.n;
-        },
-        this.getAddress = function(){
-            return this.a;
-        },
-        this.getEmail = function(){
-            return this.e;
-        }*/
+
+        /*        console.log("2 " + name);
+                // Functions - Getters
+                this.getName = function(){
+                    return this.n;
+                },
+                this.getAddress = function(){
+                    return this.a;
+                },
+                this.getEmail = function(){
+                    return this.e;
+                }*/
     }
 
     button.onclick = function(){
@@ -73,6 +75,30 @@
         window.localStorage.setItem('my_array',jsonAddress_Book);
 
 
+        var someArray = [{a:1},{b:2},{c:3}];
+        var stringified = JSON.stringify(someArray);
+        var objectified = JSON.parse(stringified);
+        var newArray = [];
+
+        for(var i=0;i<objectified.length;i++) {
+            console.log(objectified[i])
+        }
+
+        var temp_array = [];
+
+        // PlanetFactory Object Definition and Constructor Function to hold Planet Objects
+        function addToJSON_Array() {
+            this.my_JSON_array = [];
+        }
+
+// method for the factory class that will create a new Planet Object and push it to the planets Array
+        addToJSON_Array().prototype.add_AddBookEntry= function(n,a,e) {
+            // create new Planet Object
+            this.my_JSON_array.push(new AddBookEntry(n,a,e));
+        };
+
+
+
         /*for (var property in myAddressBookEntry){
             //temp_array[property] += property;
             window.localStorage.setItem("first",myAddressBookEntry);
@@ -86,6 +112,14 @@
         console.log("\nHere's the stringified object returned from localStorage");
 //debugging
         console.log(window.localStorage.getItem("my_array"));
+
+        var s = JSON.parse(window.localStorage.getItem("my_array"));
+        console.log("\nHere's the object returned from localStorage and parsed back to an object");
+//debugging
+        console.log(s);
+
+
+
 
     };
 
