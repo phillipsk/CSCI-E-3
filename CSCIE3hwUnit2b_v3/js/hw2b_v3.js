@@ -13,20 +13,7 @@
         this.n = n;
         this.a = a;
         this.e = e;
-        this.my_JSON_array = [];
 
-
-        /*        console.log("2 " + name);
-                // Functions - Getters
-                this.getName = function(){
-                    return this.n;
-                },
-                this.getAddress = function(){
-                    return this.a;
-                },
-                this.getEmail = function(){
-                    return this.e;
-                }*/
     }
 
     button.onclick = function(){
@@ -53,13 +40,8 @@
         var address = document.getElementById("address").value;
         var email = document.getElementById("email").value;
 
-        //console.log("1 " + name);
         // Step #2 - you will create a new data object
         var myAddressBookEntry = new AddBookEntry(name,address,email);
-        //console.log(name);
-        console.log(myAddressBookEntry.n);
-
-        //var myAddrnew AddBookEntry(name,address,email);
 
         // Step #3 - call on writeRowtoPage() to write your new data object to the page
         writeRowToPage(myAddressBookEntry,element);
@@ -67,46 +49,16 @@
         // Step#4 - Store your object in localStorage (preserving data
         //          that's already in there from prior submissions!)
 
-        /*// Write the object to localStorage
-         var jsonPerson = JSON.stringify(personInfo);
-         window.localStorage.setItem("person", jsonPerson);*/
-        //var temp_array = [];
-        var jsonAddress_Book = JSON.stringify(myAddressBookEntry);
-        window.localStorage.setItem('my_array',jsonAddress_Book);
+        // Array to hold AddressBookEntry Objects
+        var addressBook = [];
+
+        // Push myAddressBookEntry Obect to addressBook Array
+        addressBook.push(myAddressBookEntry);
+
+        // Store Array of Objects in Local Storage
+        window.localStorage.setItem('my_array',JSON.stringify(addressBook));
 
 
-        var someArray = [{a:1},{b:2},{c:3}];
-        var stringified = JSON.stringify(someArray);
-        var objectified = JSON.parse(stringified);
-        var newArray = [];
-
-        for(var i=0;i<objectified.length;i++) {
-            console.log(objectified[i])
-        }
-
-        var temp_array = [];
-
-        // PlanetFactory Object Definition and Constructor Function to hold Planet Objects
-        function addToJSON_Array() {
-            this.my_JSON_array = [];
-        }
-
-// method for the factory class that will create a new Planet Object and push it to the planets Array
-        addToJSON_Array().prototype.add_AddBookEntry= function(n,a,e) {
-            // create new Planet Object
-            this.my_JSON_array.push(new AddBookEntry(n,a,e));
-        };
-
-
-
-        /*for (var property in myAddressBookEntry){
-            //temp_array[property] += property;
-            window.localStorage.setItem("first",myAddressBookEntry);
-        }*/
-
-        /*        for (var i = 0; i <temp_array.length; i++){
-            console.log(temp_array[i]);
-        }*/
 
 //window.localStorage.setItem("person", JSON.stringify(configObject));
         console.log("\nHere's the stringified object returned from localStorage");
@@ -118,7 +70,9 @@
 //debugging
         console.log(s);
 
-
+        for (var i = 0; i < addressBook.length; i++){
+            writeRowToPage(addressBook[i],element);
+        }
 
 
     };
