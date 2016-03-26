@@ -119,37 +119,6 @@
      * that they use the same browser on the same computer!)
      * */
     // function to set input field values
-    function setInputFieldValues(planetName_val,
-                                 aphelion_val, perihelion_val,
-                                 orbital_period_d_val, orbital_period_y_val,
-                                 surface_area_val, surface_area_exp_val,
-                                 volume_val, volume_exp_val,
-                                 mass_val, mass_exp_val,
-                                 temp_val,
-                                 imgSymbolURL_val, imgURL_val,
-                                 info_val) {
-        planetName.value = planetName_val;
-        aphelion.value   = aphelion_val;
-        perihelion.value    = perihelion_val;
-        orbital_period_d.value = orbital_period_d_val;
-        orbital_period_y.value = orbital_period_y_val;
-        surface_area.value     = surface_area_val;
-        surface_area_exp.value = surface_area_exp_val;
-        volume.value     = volume_val;
-        volume_exp.value = volume_exp_val;
-        mass.value     = mass_val;
-        mass_exp.value = mass_exp_val;
-        temp.value     = temp_val;
-        imgSymbolURL.value = imgSymbolURL_val;
-        imgURL.value       = imgURL_val;
-        info.value = info_val;
-    }
-
-    function partB_setInputFieldValues(n,a,e){
-        this.n = n;
-        this.a = a;
-        this.e = e;
-    }
 
     var string = JSON.parse(window.localStorage.getItem("my_array"));
 
