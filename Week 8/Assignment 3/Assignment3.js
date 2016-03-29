@@ -11,6 +11,7 @@ function traverse(el, str) {
 
 
 }
-
+var eList = [];
 traverse(document.documentElement, 'text');
+console.log()
 

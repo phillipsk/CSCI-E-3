@@ -15,7 +15,7 @@ window.onload = function(){
         }
 
        // 2) we'll collect the H elements in an array so we can examine them later
-       	var hList = new Array();
+       	var hList = [];
         function collectHeadings(e){
             if (e.nodeName.indexOf("H")==0) {
                 hList.push(e);
