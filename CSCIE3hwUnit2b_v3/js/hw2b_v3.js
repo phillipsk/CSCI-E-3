@@ -55,7 +55,7 @@
 
         // Push myAddressBookEntry Obect to addressBook Array
         addressBook.push(myAddressBookEntry);
-        console.log(myAddressBookEntry);
+        //console.log(myAddressBookEntry);
 
         // Store Array of Objects in Local Storage
         window.localStorage.setItem('my_array',JSON.stringify(addressBook));
@@ -63,19 +63,19 @@
 
 
 //window.localStorage.setItem("person", JSON.stringify(configObject));
-        console.log("\nHere's the stringified object returned from localStorage");
+//        console.log("\nHere's the stringified object returned from localStorage");
 //debugging
-        console.log(window.localStorage.getItem("my_array"));
+//        console.log(window.localStorage.getItem("my_array"));
 
         var s = JSON.parse(window.localStorage.getItem("my_array"));
-        console.log("\nHere's the object returned from localStorage and parsed back to an object");
+        //console.log("\nHere's the object returned from localStorage and parsed back to an object");
 //debugging
-        console.log(s);
+//        console.log(s);
 
         //window.localStorage["my_array"].clear();
 
 
-    }
+    };
 
     /* This function accepts two arguments -
      *    @dataObject: your data object representing a single
@@ -130,7 +130,7 @@
             for (var i = 0; i < string.length; i++){
                 addressBook[i] = string[i];
                 writeRowToPage(string[i],element);
-                console.log(string[i]);
+                //console.log(string[i]);
             }
         }
     };
