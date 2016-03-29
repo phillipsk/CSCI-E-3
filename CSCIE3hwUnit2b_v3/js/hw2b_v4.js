@@ -128,12 +128,46 @@
     window.onload = function(){
         if ( string != null){
             for (var i = 0; i < string.length; i++){
-                addressBook[i] = string[i];
+                //writeRowToPage(addressBook[i],element);
+                //writeRowToPage(myAddressBookEntry[i],element);
+                //writeRowToPage(myAddressBookEntry[i],element);
+                //var myAddressBookEntry = new AddBookEntry(name,address,email);
                 writeRowToPage(string[i],element);
                 console.log(string[i]);
             }
         }
+        persistStorage();
     };
+
+    function persistStorage(){
+        var string = JSON.parse(window.localStorage.getItem("my_array"));
+        if (string != null){
+            for (var i = 0; i < string.length; i++){
+                var string_entry = string[i];
+                console.log(string_entry.constructor.name);
+                console.log(string_entry);
+
+                var newBookEntry = new AddBookEntry(string.n,string.a,string.e);
+                console.log(string_entry.constructor.name);
+                console.log(string_entry);
+            }
+            writeRowToPage(newBookEntry,element);
+        }
+    }
+
+ /*   // function to display Planet on page using eisting functionality
+    function extractObjectFromLS(string_element) {
+        var planetSelect = document.getElementById('planetSelect');
+        var len = planetSelect.length;
+        for (var i = 0; i < len; i++) {
+            if (planetSelect.options[i].text === planetName) {
+                planetSelect.selectedIndex = i;
+                break;
+            }
+        }
+        // fire the Select Element's onchange event
+        planetSelect.onchange();
+    }*/
 
 
 })();
