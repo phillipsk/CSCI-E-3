@@ -8,10 +8,14 @@ function traverse(el, str) {
     }
     // Or your code can go here - acting on the way back up
     //  the tree towards the root
-
+    if (el.nodeValue = "text"){
+        textList.push(el)
+    }
 
 }
-var eList = [];
+var textList = [];
 traverse(document.documentElement, 'text');
-console.log()
+for (var i = 0; i < textList.length; i++){
+    console.log(textList[i].parentNode);
+}
 
