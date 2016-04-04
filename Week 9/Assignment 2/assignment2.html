@@ -1,0 +1,14 @@
+<h3>Practice Set, Week 9, Event Handling and Bubbling</h3>
+<link rel="stylesheet" type="text/css" href="assignment2.css">
+<script type="text/javascript" src="assignment2.js"></script>
+<h3>Practice Set, Week 9, Event Handling and Bubbling</h3>
+
+<p>This page contains two buttons, each with an event handler that causes the button, when clicked to echo its text to the page.</p>
+<p>Your task is to rewrite the event handling code so that there is only one event handling function. That function should be called when a user clicks on <i>either</i> button. The output should remain identical. </p>
+<p>You'll want to consider attaching a single event handler to a node further up the DOM tree, and checking there for which element was actually clicked (using a conditional). </p>
+<p>Hint: this is exactly the process that's demonstrated in the video in Week 9 Lesson 2</p>
+<div id="container">
+    <h4 id="output"></h4>
+    <button id="happyBtn">Coding can be fun!</button>
+    <button id="gloomyBtn">Coding can be maddening!</button>
+</div>
