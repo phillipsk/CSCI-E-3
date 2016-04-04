@@ -1,7 +1,6 @@
 /* hw2b.js */
 "use strict";
 
-
 // First we do a self-invoking function that contains everything - there will be nothing
 //  exposed to the global scope.
 (function(){
@@ -55,7 +54,7 @@
 
         // Push myAddressBookEntry Obect to addressBook Array
         addressBook.push(myAddressBookEntry);
-        //console.log(myAddressBookEntry);
+        console.log(myAddressBookEntry);
 
         // Store Array of Objects in Local Storage
         window.localStorage.setItem('my_array',JSON.stringify(addressBook));
@@ -63,14 +62,14 @@
 
 
 //window.localStorage.setItem("person", JSON.stringify(configObject));
-//        console.log("\nHere's the stringified object returned from localStorage");
+        console.log("\nHere's the stringified object returned from localStorage");
 //debugging
-//        console.log(window.localStorage.getItem("my_array"));
+        console.log(window.localStorage.getItem("my_array"));
 
         var s = JSON.parse(window.localStorage.getItem("my_array"));
-        //console.log("\nHere's the object returned from localStorage and parsed back to an object");
+        console.log("\nHere's the object returned from localStorage and parsed back to an object");
 //debugging
-//        console.log(s);
+        console.log(s);
 
         //window.localStorage["my_array"].clear();
 
@@ -126,12 +125,14 @@
     /*sought onload documentation form MDN
      *https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload*/
     window.onload = function(){
-        if ( string != null){
-            for (var i = 0; i < string.length; i++){
-                addressBook[i] = string[i];
-                writeRowToPage(string[i],element);
-                //console.log(string[i]);
-            }
+        if ( string != null)
+        for (var i = 0; i < string.length; i++){
+            //writeRowToPage(addressBook[i],element);
+            //writeRowToPage(myAddressBookEntry[i],element);
+            //writeRowToPage(myAddressBookEntry[i],element);
+            //var myAddressBookEntry = new AddBookEntry(name,address,email);
+            writeRowToPage(string[i],element);
+            console.log(string[i]);
         }
     };
 
