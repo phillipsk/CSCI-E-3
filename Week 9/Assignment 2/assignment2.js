@@ -1,13 +1,29 @@
 window.onload=function(){
 
     var happy = document.getElementById("happyBtn");
-    happy.addEventListener("click", function(evt){
+    var gloomy = document.getElementById("gloomyBtn");
+    var highest_dom_el = document.getElementById("container");
+
+    highest_dom_el.addEventListener("click",function(evt){
+       if (evt.target.id == "happyBtn"){
+           var el = evt.target.id;
+           alert("Target id == " + evt.target.id + " and currentTarget == "+ evt.currentTarget.id);
+           //logMessage(evt.target.id.innerHTML);
+           //logMessage(el.innerHTML);
+           logMessage(happy.innerHTML);
+       }
+        else {
+           //evt == gloomy;
+           //logMessage(gloomy.innerHTML);
+       }
+    });
+
+/*    happy.addEventListener("click", function(evt){
         logMessage(evt.currentTarget.innerHTML);
     });
-    var gloomy = document.getElementById("gloomyBtn");
     gloomy.addEventListener("click", function(evt){
         logMessage(evt.currentTarget.innerHTML);
-    });
+    });*/
 };
 
 
