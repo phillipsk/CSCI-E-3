@@ -1,16 +1,42 @@
-"use strict";
-// create a 'DIV' element node and assign it to a variable
-var element = document.createElement("div");
+var f = document.forms[0];
+var pwInput = document.forms[0].password;
+var pwHint = document.getElementById("pwHint");
+/*  This handler will run when you submit the form    */
+f.addEventListener("submit", function (e) {
 
-// using setAttribute(), give it an ID attribute of "myNewDiv"
-element.setAttribute("id","myNewDiv");
+    /// Here we can do whatever we want with the form
+    //    and its elements. 
+    for (var i = 0; i < f.elements.length; i++) {
+        console.log(f.elements[i].value);
+    }
 
-// create a text node with some text of your choosing, and assign it to a variable
-var t = document.createTextNode("Hello World");
+    // if things aren't right, I can cancel the form
+    //  submission right here:
+    pwInput.addEventListener("input", function () {
+        // We check the element's 'validity' property,
+        //  which will be 'valid' or some other value
+        //  (the specific kind of invalid depends on the constraint)
 
-// append you text node to your element
-element.appendChild(t);
+        if (!this.validity.valid) {
+            // For min/max constraints,
+            //  rangeUnderflow or rangeOverflow apply
+            console.log("Too high: " + this.validity.rangeOverflow);
+            console.log("Too low: " + this.validity.rangeUnderflow);
 
-// append your new element to the existing div which has id="addNewOneHere"
-var a = document.getElementById("addNewOneHere");
-a.appendChild(element);
+            //output a useful message
+            if (this.validity.rangeOverflow) {
+                pwHint.innerHTML = 'Number is too high';
+                e.preventDefault();
+            } else if (this.validity.rangeUnderflow) {
+                pwHint.innerHTML = 'Number is too low';
+                e.preventDefault();
+            }
+        } else {
+            // don't forget to clear hint if the input becomes valid!
+            pwHint.innerHTML = '';
+        }
+
+
+    });
+});
+
