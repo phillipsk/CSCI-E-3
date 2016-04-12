@@ -9,12 +9,17 @@
 <p><h3>By: Kevin Phillips</h3></p>
 <h2>Validating password form submission with regex</h2>
 
-<p>Please enter a password with the following parameters (...)</p>
+<h3>In this exercise you will transform the HTML regex pattern expression into identical Javascript regex syntax, and
+as such the HTML pattern attribute will no longer prevent submission, incorporate a method to prevent submission upon
+invalid passwords matching the translated regex syntax in Javasript</h3>
+<p>Please enter a password with the following parameters: <em>(Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters)</em></p>
 
-<form action="#" id="theForm" name="firstForm">
+<form action="#" id="theForm" name="firstForm" method="post">
     <label for="password">Password: </label>
-    <input type="text" name="password" id="password" size="20" pattern="[A-Za-z]{3}[0-9]{3}" required/><br/>
-    <span id="pwHint"></span>
+    <!--HTML Regex-->
+    <input type="text" name="password" id="password" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"><br/>
+    <!--JS Regex-->
+<!--    <input type="text" name="password" id="password" size="20" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"><br/>-->
     <br/>
     <button type="submit" name="submit">Submit</button>
 </form>
