@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSCI E-3 Homework Project Unit #3a</title>
+    <link rel="stylesheet" href="css/cscie3.css">
+    <script type="text/javascript" src="js/hw3a.js"></script>
+  </head>
+  <body class="hw">
+    <div class="container">
+      <h1>CSCI E-3 Project Unit #3a</h1>
+      <p class="whatlearn">Unit 3 Projects will cover the DOM, browser Events
+        and FORM handling, with a detour into Javascript closures.This part (a)
+        will focus on the DOM.&nbsp; </p>
+      <h3 class="whatlearn">What you're learning:</h3>
+      <p>Javascript is the "behavior" layer of the client-side Web experience.
+        This unit covers some of the common interactions between the components
+        of a Web page (structure, content, styles, forms) and Javascript, as
+        exposed by the DOM and the DOM Event model. <br>
+      </p>
+      <ol>
+      </ol>
+      <h3>What you need to do:</h3>
+      <ol>
+        <ol>
+          <li>DOM Exercise: Split a block of text into individual SPANs or DIVs</li>
+        </ol>
+      </ol>
+      <h4>1) DOM Exercise: Split a block of text into individual SPANs or DIVs</h4>
+      <p>The following exercise contains a block of text that represents the
+        written transcript of a video. Often, a transcript is provided with a
+        video so viewers can read along, or so the video can be captioned.&nbsp;
+      </p>
+      <p>In this exercise, we'll be doing the first step in building an
+        interface that could appear alongside a video player on a Web
+        page.&nbsp; The idea is that each word in the transcript will highlight
+        as the matching portion of the video is playing.</p>
+      <p>In order to do this, each word must be in its own HTML SPAN (or DIV).
+        In a real video transcript application, each SPAN would have a time
+        value in seconds associated with it, and as that moment of the video
+        played, we'd change the background color of the SPAN matching that time
+        period. </p>
+      <p> In a real application, we would also have the word be clickable, upon
+        which the video would seek to the appropriate moment and play from
+        there.&nbsp; We will do this in Unit 4 if this course, but you don't
+        have to make the words clickable in this assignment.&nbsp; Instead,
+        you'll make the words highlight (with a yellow background perhaps, or
+        some other notable change in style) when the mouse is over the word. </p>
+      <p>So, if the input text is <strong>Breaking News. Spring is here to
+          stay.</strong> the HTML output would be something like:</p>
+      <code>&lt;span class="word" id="word0"&gt;Breaking &lt;/span&gt;<br>
+        &lt;span class="word" id="word1"&gt;News. &lt;/span&gt;<br>
+        &lt;span class="word" id="word2"&gt;Spring &lt;/span&gt;<br>
+        &lt;span class="word" id="word3"&gt;is &lt;/span&gt;<br>
+        &lt;span class="word" id="word4"&gt;here &lt;/span&gt;<br>
+        &lt;span class="word" id="word5"&gt;to &lt;/span&gt;<br>
+        &lt;span class="word" id="word6"&gt;stay. &lt;/span&gt;</code>
+      <p>In practice, the display of the sentence in the browser wouldn't look
+        much different, like so: <b><span class="word" id="word0">Breaking </span>
+          <span class="word" id="word1">News. </span> <span class="word" id="word2">Spring
+            </span> <span class="word" id="word3">is </span> <span class="word"
+            id="word4">here </span> <span class="word" id="word5">to </span>
+          <span class="word" id="word6">stay.&nbsp; </span></b>(go ahead and
+        View Source and you'll see that this sentence in this paragraph is
+        indeed separated into seven distinct SPANs).&nbsp; </p>
+      <p>We won't be building the video player part of this tool in this
+        exercise. We'll only be preparing the transcript by dividing it into
+        individual SPANs. </p>
+      <p>The DIV that will serve as your input (and output) is here, with
+        id="transcriptText":</p>
+      <div id="transcriptText"> It’s that time of year when you clean out your
+        closets, dust off shelves, and spruce up your floors. Once you’ve taken
+        care of the dust and dirt, what about some digital cleaning? Going
+        through all your files and computers may seem like a daunting task, but
+        we found ways to make the process fairly painless.</div>
+      <br>
+      <button id="divideTranscript" class="button">&nbsp;Transform the
+        Transcript!&nbsp; </button>
+      <br>
+      <p>Your task is to add Javascript to the file js/hw3a.js that will convert
+        that text as described when the <em>Transform the Transcript</em>
+        button is clicked. Your output can be written back into the same DIV.&nbsp;
+        You may use innerHTML to clear the contents of the DIV, but not to
+        create the SPAN elements.&nbsp; You should build the elements using
+        document.createElement() and the associated methods.</p>
+      <p>To break the problem into smaller pieces, you may want to think about
+        it as a few simple steps that may look something like this:</p>
+      <ol>
+        <li>Divide the text into an array of words.</li>
+        <li>Iterate over that array, at each step:</li>
+        <ol>
+          <li>Build SPAN elements as you go, along with the attributes as shown
+            in the example</li>
+          <li>Add the SPAN elements to the original DIV</li>
+        </ol>
+        <li>Add a handler to the SPAN elements, or to the DIV, which causes the
+          style on the SPAN to change on mouseover. </li>
+      </ol>
+      <p>Submit your solution as a ZIP file, with the usual naming convention: a
+        folder named [lastname_firstname]_project3a zipped into a file named like
+        [lastname_firstname]_project3a.zip</p>
+      <p style="background-color: white;">Credit: the sample text here comes
+        from the <a target="_blank" href="http://www.extension.harvard.edu/hub/blog/extension-blog/digital-cleaning-spring">Harvard
+          Extension Hub blog</a>, and is not actually from a video. </p>
+      <ol>
+        <ol>
+        </ol>
+      </ol>
+      <br>
+    </div>
+  </body>
+</html>
