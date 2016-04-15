@@ -50,5 +50,16 @@ window.onload = function() {
          d.setAttribute("class", "searchHit");  // apply highlight*/
     }
 
+    var elMouseover = document.getElementById("transcriptText");
+    elMouseover.addEventListener("mouseover",function () {
+        elMouseover.style.color = "yellow";
+    });
+    elMouseover.addEventListener("mouseout",function () {
+        elMouseover.style.color = "black";
+    });
+    
+    function custom_mouseOver() {
+        
+    }
 
 };
