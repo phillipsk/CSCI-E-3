@@ -100,6 +100,8 @@ window.onload = function () {
                     opt.appendChild(txtNode);
                     modelSelect.appendChild(opt);
                 }
+               /* Debated adding this to a separate addEventListener method outside of this event scope to prevent
+                duplicate option entries*/
                 if (modelSelect.value != '') {
                     thirdSelect.style.display = 'block';
                     select3Div.style.display = 'block';
