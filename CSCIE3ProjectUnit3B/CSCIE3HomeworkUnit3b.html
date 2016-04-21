@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSCI E-3 Unit 3 Project, Part B</title>
+    <link rel="stylesheet" href="css/cscie3.css">
+    <script type="text/javascript" src="js/hw3b.js"></script>
+    <meta charset="UTF-8">
+  </head>
+  <body class="hw">
+    <div class="container">
+      <h1>CSCI E-3 Unit 3 Project, Part B</h1>
+      <p class="whatlearn">Unit 3b Homework will exercise the DOM, browser
+        Events and form handling. This assignment is worth half of the total point value for the Unit 3 project. 
+The other half was Unit 3 Project: Part B, previously distributed as a ZIP file.
+ You should complete Part A before working on Part B.</p>
+      <h4>Add behavior and additional functionality to an HTML <em>FORM</em></h4>
+      You'll be adding behavior to the form below, including adding some new
+      form fields and sections. You will be adding some of the following
+      behaviors and features to the form.&nbsp; Specifically, you must do four
+      of the six (your choice) items below. Doing more
+      than the minimum counts as extra credit. <br>
+      <br>
+      You may change the HTML if you like, to make a form that better fits your
+      interests, make it look better, or provide a better user
+      experience. You must make it clear to your grader which of the
+      six behaviors you've implemented&mdash;this will be especially important if
+      you change the form. <br>
+      <ol>
+        <li>There are two password fields on the form. You will write code that
+          ensures that:</li>
+        <ol>
+          <li>Users must enter passwords of at least 8 characters.</li>
+          <li>The two fields must match.</li>
+          <li>Users receive feedback immediately if the passwords don't match,
+            rather than only when the form is submitted.<br>
+            <br>
+          </li>
+        </ol>
+        <li>There is a textarea on the form labeled <em>Brief Bio</em>. This is going to be <em>really</em> brief. Your code will
+          provide a countdown near the <em>140 character limit</em> caption
+          that counts backwards from 140 to zero to show users how many
+          characters they have left.&nbsp; You may make it so that once the
+          limit is reached, no more characters show in the field, even if the
+          user keeps typing. Alternatively, you may choose to let users keep typing,
+          but have the page show users how far over the limit they've gone. <br>
+          <br>
+        </li>
+        <li>Sometimes a selection in a pull-down menu (an HTML <em>SELECT</em>)
+          should populate another SELECT field with complimentary values.&nbsp;
+          For example, if we're selecting cars, picking "Ford" in the Make field
+          should populate the Model field with Ford models, such as the Focus,
+          the Fusion, and the Flex, while picking "Dodge" might populate the Model
+          field with values that include Charger, Challenger, and Caravan.<br>
+          <br>
+          Your task is to make the two complimentary SELECT controls work in
+          this way&mdash;selecting a value in the first populates the second with
+          appropriate choices. The types of values are entirely up to you&mdash;
+          automobile Make/Model is just an example.&nbsp; <br>
+          &nbsp;</li>
+        <li>Your form should have at least one subsection which will appear
+          depending on the value selected in a checkbox, radio button or SELECT.
+          For example, if the user selectsed a checkbox called "add my Twitter
+          account", a section of the form will appear prompting the user for
+          their Twitter username. You may add this feature anywhere on the form.<br>
+          &nbsp;</li>
+        <li>Phone number: While it's easy to validate a phone number to make
+          sure it matches the HTML5 validation pattern, it is even better is to
+          reformat one to make it match. For this field, the user may enter any
+          ten-digit number in either xxx-xxx-xxxx, (xxx)xxx-xxxx or xxxxxxxxxx
+          form. <br>
+          <br>
+          Your validation should confirm that it's a ten-digit number,
+          regardless of the punctuation used, and format it in the input field
+          as xxx-xxx-xxxx.&nbsp; You may do this by applying the formatting live
+          (difficult), or waiting until the user has finished typing in the
+          field (onchange or onblur) and then reformat the string (easier). It's up to you.</li>
+        <br>
+        <li>Upon submitting the form, make sure that at least one of the Phone or
+          Email fields are completed. One or the other, or both, may be filled in,
+          but both cannot be blank. Provide a useful message to the user
+          if they fail to complete one of these fields.</li>
+      </ol>
+      <br>
+      <form autocomplete="off" action="" name="hw4Form"><br>
+        <fieldset name="LoginInfo"><input size="30" placeholder="username"
+            name="username" id="username" type="text"> <br>
+          <br>
+          Password:<br>
+          <input size="30" required="required" placeholder="password" name="pwd1"
+            id="pwd1" type="password" pattern=".{8,}">
+          <span class="hint" id="pwd1Hint">Password
+            is too short (must be at least 8 characters)</span> <br>
+          Repeat Password:<br>
+          <input size="30" required="required" placeholder="password" name="pwd2"
+            id="pwd2" type="password" pattern=".{8,}">
+          <span class="hint" id="pwd2Hint">Passwords
+            don't match</span><br>
+          <br>
+          <span id="form1Msg"></span>
+          <legend>Login Info</legend></fieldset>
+        <br>
+        <br>
+        <fieldset id="bioInfo"> &nbsp;&nbsp; Brief Bio<br>
+          <textarea wrap="soft" rows="6" cols="40" name="bio" id="bio"></textarea>
+          <div id="charLimit">Limit: 140 characters. You have <span id="charsLeft">140</span>
+            left.</div>
+          <br>
+          <div id="selects">
+            <div id="select1Div" style="float:left;margin-right:15px;"> Select
+              Your preferred vehicle make <br>
+              <select name="firstSelect" id="firstSelect">
+                <option>----</option>
+              </select>
+            </div>
+            <div id="select2Div"> Select Your vehicle model
+              <br>
+              <select name="secondSelect" id="secondSelect">
+                <option>----</option>
+                &nbsp;
+              </select>
+            </div>
+          </div>
+          <br>
+          Contact Info<br>
+          <br>
+          Address<br>
+          <input size="30" placeholder="Street Address" name="address" id="address"
+            type="text"><br>
+          <br>
+          City&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; State&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; Postal Code<br>
+          <input size="20" placeholder="Town or City" name="city" id="city" type="text">&nbsp;&nbsp;&nbsp;
+          <input size="10" placeholder="State/Province" name="state" id="state"
+            type="text">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          <input placeholder="Postal Code" name="zip" id="zip " type="text"><br>
+          <br>
+          Phone&nbsp;&nbsp;&nbsp; <br>
+          <input size="16" placeholder="Phone Number" id="phone" name="phone" pattern=""
+            type="text"><br>
+          <br>
+          Email<br>
+          <input placeholder="Email address" name="email" type="email"><br>
+          <br>
+          <button type="submit" id="submitBtn" name="submit">Register Me!</button><br>
+          <legend>About You</legend></fieldset>
+        <br>
+      </form>
+      <br>
+    </div>
+  </body>
+</html>
