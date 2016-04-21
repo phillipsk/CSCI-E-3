@@ -1,4 +1,3 @@
-
 body {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 14px;
@@ -37,4 +36,8 @@ h4 {
     text-align:center;
     text-shadow:1px 1px 0px #cd8a15;
     background-color:#f6b33d;
+}
+
+.hidden{
+    display:none;
 }

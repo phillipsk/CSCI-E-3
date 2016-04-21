@@ -1,14 +1,14 @@
 /* hw3b.js */
 
 /*
-*Users must enter passwords of at least 8 characters.
+ *Users must enter passwords of at least 8 characters.
  The two fields must match.
  Users receive feedback immediately if the passwords don't match, rather than only when the form is submitted.
  */
-function processFormOne(evt){
+function processFormOne(evt) {
 
     // Modified from Larry's example & Rob's section
-    if (! pwd1.validity.valid && ! pwd2.validity.valid) {
+    if (!pwd1.validity.valid && !pwd2.validity.valid) {
         pwd1Hint.style.display = 'block';
     } else {
         pwd1Hint.style.display = 'none';
@@ -16,15 +16,16 @@ function processFormOne(evt){
     // using CSS property here to notify user
     if (pwd1.value != pwd2.value) {
         pwd2Hint.style.display = 'block';
-    } else{
+    } else {
         pwd2Hint.style.display = 'none';
     }
 }
 
 // data structures for selection option Question 3
-var autoMake = ['Ford','Dodge'];
-var modelFord = ['Focus','Fusion','Mustang'];
-var modelDodge = ['Charger','Challenger','Caravan'];
+var autoMake = ['Ford', 'Dodge'];
+var modelFord = ['Focus', 'Fusion', 'Mustang'];
+var modelDodge = ['Charger', 'Challenger', 'Caravan'];
+var year = ['1998', '1999', '2000'];
 
 function clearSelectList(el) {
     var MAX = el.length;
@@ -33,15 +34,15 @@ function clearSelectList(el) {
     }
 }
 
-window.onload = function(){
+window.onload = function () {
     var forms = document.forms;
 
     // password validation Question 1
     var form1 = document.getElementsByName('hw4Form');
     var pwd1 = document.getElementById('pwd1');
     var pwd2 = document.getElementById('pwd2');
-    pwd1.addEventListener('change',processFormOne,false);
-    pwd2.addEventListener('change',processFormOne,false);
+    pwd1.addEventListener('change', processFormOne, false);
+    pwd2.addEventListener('change', processFormOne, false);
     var pwd1Hint = document.getElementById('pwd1Hint');
     var pwd2Hint = document.getElementById('pwd2Hint');
 
@@ -59,19 +60,21 @@ window.onload = function(){
      Your task is to make the two complimentary SELECT controls work in this way—selecting a value in the first populates the second with appropriate choices. The types of values are entirely up to you— automobile Make/Model is just an example.  */
     var makeSelect = document.getElementById('firstSelect');
     var modelSelect = document.getElementById('secondSelect');
+    var thirdSelect = document.getElementById('thirdSelect');
+    var select3Div = document.getElementById('select3Div');
     var len = autoMake.length;
 
     // Learned of this code structure from Rob's section
     // use a for loop because the index is needed
     for (var i = 0; i < len; i++) {
-        var opt     = document.createElement('option');
+        var opt = document.createElement('option');
         var txtNode = document.createTextNode(autoMake[i]);
-        opt.value   = i;
+        opt.value = i;
         opt.appendChild(txtNode);
         makeSelect.appendChild(opt);
     }
 
-    makeSelect.addEventListener('change', function() {
+    makeSelect.addEventListener('change', function () {
         var indx = this.value;
 
         // Clears the option list between changes
@@ -80,6 +83,7 @@ window.onload = function(){
         if (indx != '') {
 
             if (makeSelect.value == autoMake.indexOf("Ford")) { // Ford
+                select3Div.style.display = 'none';
                 var len = modelFord.length;
                 for (var i = 0; i < len; i++) {
                     var opt = document.createElement('option');
@@ -96,12 +100,25 @@ window.onload = function(){
                     opt.appendChild(txtNode);
                     modelSelect.appendChild(opt);
                 }
-            }else {
+                if (modelSelect.value != '') {
+                    thirdSelect.style.display = 'block';
+                    select3Div.style.display = 'block';
+
+                    for (var i = 0; i < len; i++) {
+                        var opt = document.createElement('option');
+                        var txtNode = document.createTextNode(year[i]);
+                        opt.value = i;
+                        opt.appendChild(txtNode);
+                        thirdSelect.appendChild(opt);
+                    }
+                }
+            } else {
                 var opt = document.createElement('option');
                 var txtNode = document.createTextNode('----');
                 opt.appendChild(txtNode);
                 modelSelect.appendChild(opt);
             }
         }
+
     })
 };
