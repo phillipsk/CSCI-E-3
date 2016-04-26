@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice Set, Week 12, jQuery Collections Plugin</title>
+    <link rel="stylesheet" type="text/css" href="jquery_plugin.css">
+</head>
+<body>
+<h3>Practice Set, Week 12, jQuery Collections Plugin</h3>
+
+<p>This page includes a jQuery collections plugin which works, but it is not a very well-behaved plugin.</p>
+<p>Your task is to fix it so that it properly supports chaining, and protects the global scope from whatever it does, while also supporting the use of the jQuery.noConflict() setting. These are discussed as steps two and three of the section on having a well-behaved plugin, and are demonstrated in video 12.2.</p>
+<p>If you've got it right, you should be able to:</p>
+<ol>
+    <li>Uncomment line 1, which calls jQuery.noConflict()</li>
+    <li>Comment out line 15, which will start throwing an error after you've called .noConflict()</li>
+    <li>Uncomment line 17, which uses jQuery by its name rather than the $, and chains jQuery method calls.</li>
+</ol>
+<p>The output will look the same as initially (with a little 'size' box after each &lt;p&gt;) , except all the &lt;p&gt; text will turn blue.</p>
+<p><b>Explanation of the plugin code:</b> This plugin displays the size of any element returned in the jQuery selection. For each element, it creates a span. For convenience, we make 'span' a jQuery object on line 8, and add the 'super' class to it in line 10. Then we add the size information to the span (line 10), and then append the span to the original element (line 11). The CSS causes the size information to be small and have a lightyellow background.</p>
+</body>
+<script type="text/javascript" src="jquery_plugin.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</html>
