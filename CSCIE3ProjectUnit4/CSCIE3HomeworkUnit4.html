@@ -1,0 +1,124 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/transcript.css">
+    <script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+    <script type="text/javascript">jwplayer.key="kCqE9K8EVVjA+o40SKCMr1/JXOrlDpbOhctE8g==";</script>
+    <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+    <script src="js/transcript.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSCI E-3 Unit 4 Project</h1>
+      <p class="whatlearn">The Unit 4 Project will give you a chance to exercise
+        your knowledge of extending jQuery and of multimedia players like the
+        JWPlayer.&nbsp; We're building on the "divide-text-into-spans" example
+        we started in Project #3A, and will finish this with a fully-working
+        example. &nbsp; </p>
+      <h4><br>
+        <em>You will use jQuery and JWPlayer to add a video to this page, and
+          make the transcript interactive with the video. The file at
+          js/transcript.js has a framework "stubbed out" with a few key code
+          segments&nbsp; for you to fill in.&nbsp; <br>
+        </em></h4>
+      At the bottom of this page is a block of text which is the transcript from
+      a public-domain video produced by NASA. (Sorry for the hokey video&mdash;I
+      needed something in the public domain, brief, and for which there was a timed
+      transcript available).&nbsp; If you look at the source code, you'll see
+      that this seemingly single block of text is actually broken up into many
+      separate SPANs, similar to the ones you made in Unit Project #3A.&nbsp; <br>
+      <br>
+      The HTML source code looks something like this:<br>
+      <blockquote><span style="font-family: monospace;">&lt;span class="words"
+          data-start="17.869" data-dur="3.82"&gt;Hey this is Dwayne Johnson.
+          While playing astronaut Chuck Baker in the film Planet&lt;/span&gt;<br>
+          &lt;span class="words" data-start="21.689"
+          data-dur="0.701"&gt;51&lt;/span&gt;<br>
+          &lt;span class="words" data-start="22.39" data-dur="3.56"&gt;I gained
+          a lot of respect for our nation's space program. NASA makes
+          new&lt;/span&gt;</span></blockquote>
+      The code in the js/transcript.js file provides the framework for the
+      solution which is a jQuery plugin called 'playerConnect()'.&nbsp; In
+      usage, it looks like this: <span style="font-family: monospace;">$('.words').playerConnect(player);</span>,
+      where the jQuery selector is returning the collection of SPAN elements,
+      and player is the jwplayer instance we've added to the page.&nbsp; <br>
+      <br>
+      The resulting behavior is twofold:<br>
+      <ol>
+        <li>As the video plays, the relevant part of the transcript highlights.
+        </li>
+        <li>If the user clicks on the transcript, the video seeks to the
+          relevant segment.</li>
+      </ol>
+      <p>A video showing the desired behavior is <a href="https://canvas.harvard.edu/courses/315/assignments/2065">on
+          the assignment page in Canvas</a>.</p>
+      <ol>
+      </ol>
+      Much of the code is provided for you in a well-commented framework, but
+      the solution will require you to add code in <span style="text-decoration: line-through;">four</span>
+      three places, each marked by a comment line like this: "YOUR CODE TO ADD #<em>n</em>":<br>
+      <ol>
+        <li><span style="text-decoration: line-through;">YOUR CODE TO ADD #1: </span>The
+          first one is near the end of the JS file, where you'll create the
+          jwplayer and load it into the page <em>(this one is already done for
+            you ... you're welcome!)</em></li>
+        <li>YOUR CODE TO ADD #2: Next you'll move into the jQuery plugin itself,
+          where you'll get the current position of the video playback from the
+          jwplayer's event object</li>
+        <li>YOUR CODE TO ADD #3: Third, you'll write the loop that compares the
+          current player time with the time described in each element, and apply
+          a style if the times match up.&nbsp; </li>
+        <li>YOUR CODE TO ADD #4: Finally, the click handler for each element is
+          created, but the logic inside is missing. You'll add the code that
+          causes a click to make the player seek to the right moment.</li>
+      </ol>
+      <p>If this sounds scary, don't despair!&nbsp; The code already includes
+        most of the heavy lifting, detailed instructions, and pseudo-code is
+        provided in several places. </p>
+      <p>We will cover JWPlayer in Week 13 in great detail and walk
+        through some examples very similar to this one.&nbsp;</p>
+      <p>As usual, submit your project as a zip file, with a folder named like
+        [lastname_firstname].project4 zipped into a file called
+        [lastname_firstname].project4.zip. </p>
+      <br>
+      <p><br>
+      </p>
+      <ol>
+      </ol>
+      <br>
+      <div id="playerDiv">Video Will Appear Here</div>
+      <div id="transcript"> <span class="words" data-start="10.099" data-dur="7"></span>
+        <span class="words" data-start="17.869" data-dur="3.82">Hey this is
+          Dwayne Johnson. While playing astronaut Chuck Baker in the film Planet</span>
+        <span class="words" data-start="21.689" data-dur="0.701">51</span> <span
+          class="words" data-start="22.39" data-dur="3.56">I gained a lot of
+          respect for our nation's space program. NASA makes new</span> <span class="words"
+          data-start="25.95" data-dur="1.35">discoveries about our universe</span>
+        <span class="words" data-start="27.3" data-dur="4.11">every day but one
+          of the coolest things about nasa is the technologies that</span> <span
+          class="words" data-start="31.41" data-dur="1.55">it creates for
+          exploring space</span> <span class="words" data-start="32.96" data-dur="3.739">are
+          also improving life here on earth. NASA technologies can be found</span>
+        <span class="words" data-start="36.699" data-dur="0.621">everywhere</span>
+        <span class="words" data-start="37.32" data-dur="3.71">from the soles of
+          the shoes to the freeze dried fruit in your cereal. These</span> <span
+          class="words" data-start="41.03" data-dur="1.58">technologies, called
+          spinoffs,</span> <span class="words" data-start="42.61" data-dur="4.36">help
+          doctors heal patients with heart problems, scientists track rare
+          animals, and</span> <span class="words" data-start="46.97" data-dur="2.409">firefighters
+          and police officers and soldiers</span> <span class="words" data-start="49.379"
+          data-dur="4.45">stay safe on the job. Space technology has even helped
+          Olympic swimmers win</span> <span class="words" data-start="53.829" data-dur="0.711">gold
+          medals.</span> <span class="words" data-start="54.54" data-dur="3.63">All
+          of these the spinoffs began as innovations for nasa missions</span> <span
+          class="words" data-start="58.17" data-dur="3.86">like the space
+          shuttle, the Hubble Space Telescope, and the International Space</span>
+        <span class="words" data-start="62.03" data-dur="3.18">Station. You
+          don't have to be an astronaut to trace</span> <span class="words" data-start="65.21"
+          data-dur="3.47">space back to where you live. Visit nasa.gov</span> <span
+          class="words" data-start="68.68" data-dur="3.549">to learn more about
+          how nasa technologies play a role in your life.</span> <span class="words"
+          data-start="72.229" data-dur="3.331">After all, there's no space like
+          home</span> </div>
+    </div>
+  </body>
+</html>
