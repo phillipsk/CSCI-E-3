@@ -130,22 +130,23 @@
 
             // YOUR for() loop or transcriptElements.each() goes here...
             // YOUR CODE TO ADD #3
-
-            for (var i = 0; i < transcriptElements.length; i++) {
+            console.log(transcriptElements.length);
+            for (var i = 0; i < transcriptElements.length-20; i++) {
                 var theSpan = transcriptElements[i];
                 var startTime = parseInt(theSpan.getAttribute("data-start"));
                 var duration = parseFloat(theSpan.getAttribute("data-dur"));
                 //console.log(theSpan, startTime, duration);
-                console.log('time ' + time);
-                console.log('startTime ' + startTime);
-                console.log('duration ' + duration);
-                console.log('end time = '+parseFloat(startTime+duration));
-                console.log(theSpan);
+
                 if (time >= startTime && time <= parseFloat(startTime+duration)) {
-                    $('#theSpan').addClass('hilite');
+                    $('theSpan').addClass("hilite");
                     //theSpan.setAttribute('class,hilite')
+                    console.log('time ' + time);
+                    console.log('startTime ' + startTime);
+                    console.log('duration ' + duration);
+                    console.log('end time = '+parseFloat(startTime+duration));
+                    console.log(theSpan);
                 } else {
-                    $('#theSpan').removeClass('hilite');
+                    $('#theSpan').removeClass("hilite");
                     //theSpan.setAttribute('class,none')
                 }
             }
