@@ -139,8 +139,9 @@
                 console.log('time ' + time);
                 console.log('startTime ' + startTime);
                 console.log('duration ' + duration);
+                console.log('end time = '+parseFloat(startTime+duration));
                 console.log(theSpan);
-                if (time >= startTime && time <= startTime + duration) {
+                if (time >= startTime && time <= parseFloat(startTime+duration)) {
                     $('#theSpan').addClass('hilite');
                     //theSpan.setAttribute('class,hilite')
                 } else {
