@@ -131,14 +131,15 @@
             // YOUR for() loop or transcriptElements.each() goes here...
             // YOUR CODE TO ADD #3
             console.log(transcriptElements.length);
-            for (var i = 0; i < transcriptElements.length-20; i++) {
+            for (var i = 0; i < transcriptElements.length; i++) {
                 var theSpan = transcriptElements[i];
                 var startTime = parseInt(theSpan.getAttribute("data-start"));
                 var duration = parseFloat(theSpan.getAttribute("data-dur"));
                 //console.log(theSpan, startTime, duration);
-
+                //console.dir(theSpan);
                 if (time >= startTime && time <= parseFloat(startTime+duration)) {
-                    $('theSpan').addClass("hilite");
+                    $('trans').addClass("hilite");
+                    transcriptElements[i].setAttribute('class','.hilite');
                     //theSpan.setAttribute('class,hilite')
                     console.log('time ' + time);
                     console.log('startTime ' + startTime);
