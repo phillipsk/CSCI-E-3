@@ -132,18 +132,33 @@
             // YOUR CODE TO ADD #3
             //console.log(transcriptElements.length);
 
-            transcriptElements.each(function(i, el) {
-                //console.log(theSpan);
-                var theSpan = $(el);
+            //transcriptElements.each(function(i, el) {
+            //	//console.log(theSpan);
+            //	var theSpan = $(el);
+            //    var startTime = parseInt(theSpan.attr("data-start"));
+            //    var duration = parseFloat(theSpan.attr("data-dur"));
+            //    //console.log(theSpan, startTime, duration, time);
+            //    if (time >= startTime && time < startTime+duration) {
+            //        theSpan.addClass("hilite");
+            //    } else {
+            //        theSpan.removeClass("hilite");
+            //    }
+            //});
+
+            for (var i = 0; i < transcriptElements.length; i++) {
+                var theSpan = $(transcriptElements[i]);
                 var startTime = parseInt(theSpan.attr("data-start"));
                 var duration = parseFloat(theSpan.attr("data-dur"));
                 //console.log(theSpan, startTime, duration, time);
                 if (time >= startTime && time < startTime+duration) {
                     theSpan.addClass("hilite");
+                    break;
                 } else {
-                    theSpan.removeClass("hilite");
+                    if (theSpan.hasClass("hilite")) {
+                        theSpan.removeClass("hilite");
+                    }
                 }
-            });
+            }
 
             //for (var i = 0; i < transcriptElements.length; i++) {
             //    var theSpan = transcriptElements[i];
