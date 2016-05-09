@@ -147,6 +147,16 @@
              });
              */
 
+            /*TODO:
+            * for graduate and/or extra credit assignment consider highlighting the differences between the vanilla JS
+            * way vs. the jQuery approach below as in regards to the for loop and CSS class activation, the JS way is
+            * absolute as setAttribute will remove ALL and Create ALL classes to the specified value as opposed to
+            * jQuery attr() method which merely appends a class to any existing classes
+            *
+            * also note the CPU differences between checking with an if statement whether a DOM element is highlighted
+            * or not before adding or removing a highlight CSS property, this saves CPU resources. Anytime we can avoid
+            * manipulating/activating a DOM element, will save us resources*/
+
             for (var i = 0; i < transcriptElements.length; i++) {
                 var theSpan = transcriptElements[i];
                 var startTime = parseInt(theSpan.getAttribute("data-start"));
