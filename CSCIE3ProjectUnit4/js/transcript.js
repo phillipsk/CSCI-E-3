@@ -206,7 +206,10 @@
             // YOUR CODE TO ADD #4
             //   Get the value of the data-start attribute (the jQuery .attr() function could help here)
             //   and call player.seek([your value goes here])
-
+            for (var i = 0; i < transcriptElements.length; i++) {
+                var theSpan = $(transcriptElements[i]);
+                player.seek(theSpan.attr("data-start"));
+            }
 
         });
     };
