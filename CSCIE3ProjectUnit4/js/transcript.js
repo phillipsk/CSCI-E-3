@@ -173,6 +173,8 @@
             // YOUR CODE TO ADD #4
             //   Get the value of the data-start attribute (the jQuery .attr() function could help here)
             //   and call player.seek([your value goes here])
+
+            /*Please note I received help from a mentor on Part #4 Specificaly he helped me with line 180 only, the if statement conditional*/
             for (var i = 0; i < transcriptElements.length; i++) {
                 var theSpan = $(transcriptElements[i]);
                 if (evt.target.textContent == theSpan.text()) {

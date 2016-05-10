@@ -130,8 +130,10 @@
             // YOUR for() loop or transcriptElements.each() goes here...
             // YOUR CODE TO ADD #3
 
-            console.time('jQuery way');
+            //for my graduate assingment
+            //console.time('jQuery way');
 
+            /*Please note I received help from a mentor on Part #4*/
             $("span").removeClass("hilite");
             for (var i = 0; i < transcriptElements.length; i++) {
                 var theSpan = $(transcriptElements[i]);
@@ -147,7 +149,8 @@
                 }
             }
 
-            console.timeEnd('jQuery way');
+            //for my graduate assingment
+            //console.timeEnd('jQuery way');
 
         });
 
@@ -164,6 +167,8 @@
             //   Get the value of the data-start attribute (the jQuery .attr() function could help here)
             //   and call player.seek([your value goes here])
 
+
+            /*Please note I received help from a mentor on Part #4*/
             for (var i = 0; i < transcriptElements.length; i++) {
                 var theSpan = $(transcriptElements[i]);
                 if(evt.target.textContent == theSpan.text()) {
