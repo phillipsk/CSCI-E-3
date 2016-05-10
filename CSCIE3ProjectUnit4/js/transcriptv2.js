@@ -144,13 +144,13 @@
             //        theSpan.removeClass("hilite");
             //    }
             //});
-
+            console.time('jQuery way');
             for (var i = 0; i < transcriptElements.length; i++) {
                 var theSpan = $(transcriptElements[i]);
                 var startTime = parseInt(theSpan.attr("data-start"));
                 var duration = parseFloat(theSpan.attr("data-dur"));
                 //console.log(theSpan, startTime, duration, time);
-                if (time >= startTime && time < startTime+duration) {
+                if (time >= startTime && time < startTime + duration) {
                     theSpan.addClass("hilite");
                     break;
                 } else {
@@ -159,6 +159,7 @@
                     }
                 }
             }
+            console.timeEnd('jQuery way');
 
             //for (var i = 0; i < transcriptElements.length; i++) {
             //    var theSpan = transcriptElements[i];
