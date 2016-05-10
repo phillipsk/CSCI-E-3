@@ -132,46 +132,58 @@
             // YOUR CODE TO ADD #3
             //console.log(transcriptElements.length);
 
-            transcriptElements.each(function(i, el) {
-                //console.log(theSpan);
-                var theSpan = $(el);
-                var startTime = parseInt(theSpan.attr("data-start"));
-                var duration = parseFloat(theSpan.attr("data-dur"));
-                //console.log(theSpan, startTime, duration, time);
-                if (time >= startTime && time < startTime+duration) {
-                    theSpan.addClass("hilite");
+            /*    The jQuery way
+             transcriptElements.each(function(i, el) {
+             //console.log(theSpan);
+             var theSpan = $(el);
+             var startTime = parseInt(theSpan.attr("data-start"));
+             var duration = parseFloat(theSpan.attr("data-dur"));
+             //console.log(theSpan, startTime, duration, time);
+             if (time >= startTime && time < startTime+duration) {
+             theSpan.addClass("hilite");
+             } else {
+             theSpan.removeClass("hilite");
+             }
+             });
+             */
+
+            /*TODO:
+            * for graduate and/or extra credit assignment consider highlighting the differences between the vanilla JS
+            * way vs. the jQuery approach below as in regards to the for loop and CSS class activation, the JS way is
+            * absolute as setAttribute will remove ALL and Create ALL classes to the specified value as opposed to
+            * jQuery attr() method which merely appends a class to any existing classes
+            *
+            * also note the CPU differences between checking with an if statement whether a DOM element is highlighted
+            * or not before adding or removing a highlight CSS property, this saves CPU resources. Anytime we can avoid
+            * manipulating/activating a DOM element, will save us resources*/
+
+            for (var i = 0; i < transcriptElements.length; i++) {
+                var theSpan = transcriptElements[i];
+                var startTime = parseInt(theSpan.getAttribute("data-start"));
+                var duration = parseFloat(theSpan.getAttribute("data-dur"));
+                //console.log(theSpan, startTime, duration);
+                //console.dir(theSpan);
+                if (time >= startTime && time <= parseFloat(startTime+duration)) {
+
+                    // setting the "class" attribute using the DOM API
+                    theSpan.setAttribute("class", "hilite");
+                    //transcriptElements[i].setAttribute('class','hilite');
+
+                    // jQuery way of adding a class to an element
+                    $(theSpan).addClass("hilite");
+
+/*                    console.log('time ' + time);
+                    console.log('startTime ' + startTime);
+                    console.log('duration ' + duration);
+                    console.log('end time = '+parseFloat(startTime+duration));
+                    console.log(theSpan);*/
+            
                 } else {
-                    theSpan.removeClass("hilite");
+                    theSpan.setAttribute('class','');
+                    //$(theSpan).removeClass("hilite");
+                    //theSpan.setAttribute('class,none')
                 }
-            });
-
-            //for (var i = 0; i < transcriptElements.length; i++) {
-            //    var theSpan = transcriptElements[i];
-            //    var startTime = parseInt(theSpan.getAttribute("data-start"));
-            //    var duration = parseFloat(theSpan.getAttribute("data-dur"));
-            //    //console.log(theSpan, startTime, duration);
-            //    //console.dir(theSpan);
-            //    if (time >= startTime && time <= parseFloat(startTime+duration)) {
-
-            //        // setting the "class" attribute using the DOM API
-            //        theSpan.setAttribute("class", "hilite");
-            //        //transcriptElements[i].setAttribute('class','hilite');
-
-            //        // jQuery way of adding a class to an element
-            //        $(theSpan).addClass("hilite");
-
-            //        console.log('time ' + time);
-            //        console.log('startTime ' + startTime);
-            //        console.log('duration ' + duration);
-            //        console.log('end time = '+parseFloat(startTime+duration));
-            //        console.log(theSpan);
-            //
-            //    } else {
-            //        theSpan.setAttribute('class','');
-            //        //$(theSpan).removeClass("hilite");
-            //        //theSpan.setAttribute('class,none')
-            //    }
-            //}
+            }
 
             /*            transcriptElements.each(function(index,element){
              //console.log(index,element);
