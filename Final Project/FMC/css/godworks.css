@@ -1,0 +1,47 @@
+/*God.Works*/
+/*Please note I received help from my mentor Errietta Kostala on interpreting the API
+documentation from  https://getbible.net/api and throughout portions of my code within
+the CSS file, for full details please review the commits on my git repository
+ https://github.com/phillipsk/CSCI-E-12/tree/master/Final%20Project/FMC*/
+.book:hover, .book.active {
+    background-color: yellow;
+}
+
+/*
+.navbar-header{
+    width: 60%;
+    color: #50dd31;
+!*    padding: inherit;
+    margin: auto;*!
+}*/
+
+h1 {
+    color: #d43f3a;
+    font-family: calibri, helvetica, sans-serif;
+}
+
+body {
+    margin: auto;
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 35px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+/*search box*/
+.input-group {
+    /*align right*/
+    float: left;
+    width: 30%;
+    margin-top: 25px;
+    margin-left: 65px;
+}
+
+.heading1 {
+    float: left;
+    width: 10%;
+}
