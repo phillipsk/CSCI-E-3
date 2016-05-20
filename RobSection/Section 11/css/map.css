@@ -1,0 +1,47 @@
+body {
+    background-color: #B2D0FE;
+}
+a {
+    color: #0000FF;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+#error {
+    position: relative;
+    left: 38px;
+    color: #FF0000;
+    font-size: .75em;
+    visibility: hidden;
+}
+#container {
+    width: 750px;
+    height: 750px;
+    margin: auto;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+#submitBtn {
+    position: relative;
+    left: 80px;
+}
+#mapDiv {
+    padding: 15px;
+    padding-top: 20px;
+    text-align: center;
+    visibility: hidden;
+}
+#mapCanvas {
+    width: 720px;
+    height: 525px;
+}
+#mapCredits {
+    padding-top: 10px;
+    text-align: right;
+    font-size: .75em;
+}
+#mapslogo {
+    position: relative;
+    top: 10px;
+}

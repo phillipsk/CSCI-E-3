@@ -1,0 +1,30 @@
+/* modified from Larry's Unit 2B code */
+#container {
+    width: 750px;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+}
+.padded {
+    padding-top: 10px;
+    font-size: .75em;
+}
+.button {
+    position: relative;
+    top: 10px;
+    left: 135px;
+}
+#tableDiv {
+    padding-top: 25px;
+}
+#userTable {
+    width: 100%;
+}
+.link {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.edited {
+    font-style: italic;
+}

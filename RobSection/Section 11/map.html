@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Section 11 - Form Validation</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/map.css" />
+</head>
+<body>
+<div id="container">
+    <div>
+        <h1>Map Maker</h1>
+        <form id="inputForm">
+            <label for="zipCode">Zip Code:</label>
+            <input type="text" id="zipCode" autofocus />
+            <br /><span id="error">Zip Code is a required field.</span>
+            <br />
+            <input type="submit" value="Submit" id="submitBtn" />
+        </form>
+    </div>
+    <div id="mapDiv">
+        <div id="mapCanvas"></div>
+        <div id="mapCredits">
+            Powered by <a href="https://developers.google.com/maps/" target="new">Google Maps API</a>.
+            <a href="https://developers.google.com/maps/" target="new">
+                <img src="https://www.gstatic.com/images/branding/product/1x/maps_64dp.png" alt="Google Maps API" id="mapslogo" />
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script src="js/map.js"></script>
+</body>
+</html>

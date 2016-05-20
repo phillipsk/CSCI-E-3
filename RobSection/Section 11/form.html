@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Section 11 - Form Validation</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+<div id="container">
+    <h1>Forms</h1>
+    <div>
+        <h2>Form 1</h2>
+        <!-- Modified from Larry's example -->
+        <form name="form1" id="form1">
+            <label for="age">Age:</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="number" id="age" name="age" size="8" min="18" max="34" required /> (size="8" min="18" max="34" required)
+            <br />
+            <label for="weight">Weight:</label>
+            <input type="text" id="weight" disabled /> (disabled)
+            <br /><br />
+            <input type="submit" value="Submit" /><input type="reset" value="Reset" />
+            <span id="form1Msg"></span>
+        </form>
+    </div>
+    <hr />
+    <div>
+        <h2>Form 2</h2>
+        <form name="form2" id="form2">
+            <input id="form2A" pattern="[a-z]{4}" required />    - abcd
+            <br /><input id="form2B" pattern="[A-Z]{4}" required />    - ABCD
+            <br /><input id="form2C" pattern="[a-zA-Z]{4}" required /> - aBcD
+            <br /><input id="form2D" pattern="[0-9]{4}" required />    - 0123
+            <br /><br />
+            <input type="submit" value="Submit" /><input type="reset" value="Reset" />
+            <span id="form2Msg"></span>
+        </form>
+    </div>
+    <hr />
+    <div>
+        <h2>Form 3</h2>
+        <form name="form3" id="form3">
+            <input id="url"   type="url" />   - URL
+            <br /><input id="email" type="email" /> - email
+            <br /><br />
+            <input type="submit" value="Submit" /><input type="reset" value="Reset" />
+            <span id="form3Msg"></span>
+        </form>
+    </div>
+    <hr />
+    <div>
+        <h2>Form 4</h2>
+        <form name="form4" id="form4">
+            <input id="form4CheckBox" type="checkbox" value="yes" />
+            <label for="form4CheckBox" id="form4CheckBoxLabel">Check Me</label>
+        </form>
+    </div>
+    <hr />
+</div>
+
+<script src="js/traverse.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+#container {
+    width: 800px;
+    margin: auto;
+}
+#inputDiv {
+    width: 375px;
+    float: left;
+    padding-right: 25px;
+}
+#inputDiv {
+    width: 375px;
+    padding-left: 25px;
+}
+.textDiv {
+    padding-top: 10px;
+}
+#buttonDiv {
+    text-align: right;
+}
+#transformBtn {
+    color: red;
+    font-weight: bold;
+}
+.blue {
+    color: blue;
+}
+.red {
+    color: red;
+}
+.hidden {
+    visibility: hidden;
+}

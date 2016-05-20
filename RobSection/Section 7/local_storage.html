@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Section 7 - Local Storage</title>
+    <meta charset="utf-8"/>
+    <!-- Include External Style Sheet -->
+    <link rel="stylesheet" href="css/storage.css"/>
+</head>
+<body class=" hasGoogleVoiceExt">
+<!-- Start Body -->
+<h3>Planet</h3>
+<div id="container">
+    <form id="inputForm"><input type="text" id="planetName" placeholder="Planet Name" autofocus="autofocus"
+                                required="required"/><br/><input type="text" id="aphelion" placeholder="Aphelion"
+                                                                 required="required"/> AU
+        <br/><input type="text" id="perihelion" placeholder="Perihelion" required="required"/> AU
+        <br/>Orbital Period:
+        <input type="text" id="orbital_period_d" placeholder="Day" class="orbit" required="required"/> d
+        <input type="text" id="orbital_period_y" placeholder="Year" class="orbit" required="required"/> y
+        <br/><input type="text" id="surface_area" placeholder="Surface Area" required="required"/> x 10
+        <input type="text" id="surface_area_exp" placeholder="exp" class="exp" required="required"/> km
+        <br/><input type="text" id="volume" placeholder="Volume" required="required"/> x 10
+        <input type="text" id="volume_exp" placeholder="exp" class="exp" required="required"/> km
+        <br/><input type="text" id="mass" placeholder="Mass" required="required"/> x 10
+        <input type="text" id="mass_exp" placeholder="exp" class="exp" required="required"/> kg
+        <br/><input type="text" id="temp" placeholder="Temp" required="required"/> k mean
+
+        <br/><br/>Info:<br/><textarea cols="50" rows="8" id="info" required="required"></textarea><br/><br/><input
+                type="text" id="imgSymbolURL" class="url" placeholder="Image Symbol URL"
+                required="required"/><br/><input type="text" id="imgURL" class="url" placeholder="Image URL"
+                                                 required="required"/><br/><br/><input type="reset" value="Clear"
+                                                                                       id="reset"/>   
+        <input type="submit" value="Submit" id="submit"/><br/><br/><input type="button" value="Persist in Local Storage"
+                                                                          id="persist"/>   
+        <input type="button" value="Clear Local Storage" id="clear"/><br/><br/><input type="button" value="Populate"
+                                                                                      id="populate"/></form>
+    <div id="disp"></div>
+</div>
+<!-- Include external JavaScript -->
+<script src="js/local_storage.js"></script>
+<!-- End Body --></body>
+</html>

@@ -1,0 +1,18 @@
+.orbit {
+    width: 100px;
+}
+.exp {
+    width: 35px;
+}
+.url {
+    width: 500px;
+}
+.planetSymbol {
+    width: 20px;
+    height: 20px;
+}
+.planetImg {
+    padding-left: 3px;
+    width: 100px;
+    height: 100px;
+}
